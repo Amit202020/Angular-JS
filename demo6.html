@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+    <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    </head>
+    <body>
+            <div  ng-controller="MainController">
+                 FirstName :<h1> {{person.firstName}} </h1>  
+				 LastName :<h1> {{person.lastName}} </h1>
+				 Email :<h1> {{person.email}} </h1>
+            <div>
+			<div  ng-controller="MainController1">
+                 FirstName :<h1> {{person.firstName}} </h1>  
+				 LastName :<h1> {{person.lastName}} </h1>
+				 Email :<h1> {{person.email}} </h1>
+            <div>
+           <script>
+		          var  app = angular.module("myapp",[]); //module
+				  
+				  app.controller("MainController",function($scope){ 
+                          var  person = {
+						       firstName: "Srinibus",
+							   lastName: "Kumar",
+							   email : "sri@gmail.com"
+						  };
+				  
+                          $scope.person =  person;
+                  });
+				  
+				   app.controller("MainController1",function($scope){ 
+                          var  person = {
+						       firstName: "Navin",
+							   lastName: "Kumar",
+							   email : "navin@gmail.com"
+						  };
+				  
+                          $scope.person =  person;
+                  });
+				  
+				  
+		   </script>
+    </body>
+</html>

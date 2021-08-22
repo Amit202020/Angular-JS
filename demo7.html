@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+            <script>
+		          var  app = angular.module("myapp",[]); //module
+				  
+				  app.controller("MainController",function($scope,$http){ 
+				  
+				     var  onError = function(reason){
+					       $scope.error = "Page Can not be displayed";
+					 }
+				  
+				      var  onResponseTime= function(response){
+				       $scope.user = response.data;
+				      };
+					  
+					 
+				  
+                      $http.get("https://api.github.com/users/wycats").then(onResponseTime,onError);
+                  });
+		   </script>   
+   </head>
+    <body ng-app="myapp">
+            <div  ng-controller="MainController">
+				 User location :<h1> {{user.location}} </h1>
+				 User blog :<h1> {{user.blog}} </h1>
+				 <div>
+				       {{error}}
+				 </div>
+            <div>
+    </body>
+</html>

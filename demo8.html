@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+            <script>
+		          var  app = angular.module("myapp",[]); //module
+				  
+				  app.controller("MainController",function($scope,$location,$interval){ 
+				   
+
+				        
+						$interval(function(){
+						     $scope.myurl = $location.absUrl();
+						},5000);
+						   
+                  });
+		   </script>   
+   </head>
+    <body ng-app="myapp">
+            <div  ng-controller="MainController">
+				<h1> {{myurl}} </h1>
+
+            <div>
+    </body>
+</html>

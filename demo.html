@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<script>
+				function  concat(){
+							var  input  = document.getElementById('uname');
+							var   label = document.getElementById('ulabel');
+							label.innerHTML = input.value;
+					}
+		</script>
+    </head>
+    <body>
+        <h1>User Input App</h1>
+       
+           Enter Your Name : <input type="text" id="uname" name="name" onkeyup="concat()"/><br>
+		   View user Name :  <label id="ulabel"></label>
+    </body>
+</html>
